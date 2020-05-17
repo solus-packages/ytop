@@ -1,0 +1,19 @@
+name       : ytop
+version    : 0.6.2
+release    : 1
+source     :
+    - https://github.com/cjbassi/ytop/archive/0.6.2.tar.gz : d9fd6ce00e27de894bc0790947fbeab40e81e34afa5ead5a53d126c458d50e99
+license    : MIT
+component  : system.utils
+summary    : A TUI based system monitor.
+description: |
+    Another TUI based system monitor, this time in Rust!
+networking : yes
+replaces   :
+    - gotop
+builddeps  :
+    - cargo
+build      : |
+    cargo build --release --bin ytop
+install    : |
+    install -Dm00755 target/release/ytop $installdir/usr/bin/ytop
